@@ -24,3 +24,6 @@ function sumOfsquares(...arr) {
 
 // So no matter how many arguments are passed in, the reduce function will always evaluate it as an array and yeild the desired result
 console.log(sumOfsquares(2, 2, 3, 4, 5));
+
+
+
