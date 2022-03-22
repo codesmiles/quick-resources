@@ -1,0 +1,1 @@
+Inside this views folder where the ejs templates will be
