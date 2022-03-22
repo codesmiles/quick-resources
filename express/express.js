@@ -1,27 +1,35 @@
 //------------------------------------------------------------------------------
 // EXPRESS template
 // //------------------------------------------------------------------------------
-// //jshint esversion:6
-// const express = require('express');
-// const bodyParser = require('body-parser');
-// const request = require("request");(Optional)
-// const ejs = require("ejs");
-// const app = express();
+//jshint esversion:6
+const express = require('express');
+const bodyParser = require('body-parser');
+const request = require("request");(Optional)
+const ejs = require("ejs");
+const app = express();
 
+// // Set up view engine middleware for ejs
+app.set("view engine", "ejs");
 
-// app.use(bodyParser.urlencoded({ extended: true }));
+// // Set up body-parser middleware
+app.use(bodyParser.urlencoded({ extended: true }));
 
-// to be able to access ayour static folder
-// app.use(express.static(`public`));(middleware)
+// to be able to access ayour static files in public folder
+app.use(express.static(`public`));(middleware)
 
-// app.get('/', (req, res) => {
-//     // res.sendFile(__dirname + '/index.html');
-//     res.send('Hello World!');
-// });
+// // Set up routes
+app.get('/', (req, res) => {
+    // res.sendFile(__dirname + '/index.html');
+    res.send('Hello World!');
+});
 
-// app.listen(5000,()=>{
-//     console.log(`app is listening at port 5000`)
-// })
+// // Listen an d create port
+
+const PORT = process.env.PORT || 3000;
+
+app.listen(PORT,()=>{
+    console.log(`app is listening at port 5000`)
+})
 
 //------------------------------------------------------------------------------
 //------------------------------------------------------------------------------
