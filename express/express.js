@@ -5,6 +5,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const request = require("request");(Optional)
+const validator = require("validator");
 const ejs = require("ejs");
 const app = express();
 
@@ -35,6 +36,10 @@ mongoose.connect(url, function (err) {
 
 // -----------------------------------------------------------------
 
+//------------------TESTING VALIDATOR-------------------
+console.log(validator.isEmail(`mikedbci@fmail.com`));
+console.log(validator.isStrongPassword(`mikeAdbch@1`));
+//------------------------------------------------------
 
 
 // // Listen an d create port
