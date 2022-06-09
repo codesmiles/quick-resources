@@ -1,1 +1,5 @@
 Inside this views folder where the ejs templates will be
+
+in case you get lost on ejs you can just reference the todolist-v1 repo for more update
+
+that involves the routing, redirecting also including broken ejs files
