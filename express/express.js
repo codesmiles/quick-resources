@@ -17,7 +17,7 @@ app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({ extended: true }));
 
 // to be able to access ayour static files in public folder
-app.use(express.static(`public`));(middleware)
+app.use(express.static(`public`)); //(middleware)
 
 // // Set up routes
 app.get('/', (req, res) => {
