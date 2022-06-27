@@ -56,12 +56,39 @@ isLoggedIn:false;
 
 // ARRAY
 let nun:string[];
-nun = [`patricia`,`gloria`]
-nun.push(`treasure`) // but push method doesn't unless you assigned it to an array
+// nun.push(`treasure`) // but push method doesn't unless you assigned it to an array// error:Variable 'nun' is used before being assigned.
+nun = [`patricia`,`gloria`] //either this
 console.log(nun)
 
-let numb:string[]=[];
+let numb:string[]=[];// or this
 numb.push(`eva`); //this works
 console.log(numb);
 
+// MIXED ARRAY(union type array variable)
+let mixed:(string|number)[] =[]; //string or numbers are allowed to be pushed to this array
+mixed.push(19);
+mixed.push(`numbers`);
+mixed.push(false)//TSerror: Argument of type 'boolean' is not assignable to parameter of type 'string | number'
+console.log(mixed)
 
+// union type single variable
+let uid:string|number
+
+uid = `abc`;
+uid = 123; //no TSerrors
+
+// OBJECT
+let ninjaOne: object;//ninjaOne becomes an object but since an array is a form of an object it is not static enough
+ninjaOne ={name :`smiles`,age:`25`};
+// but for the sake of specificity
+let ninjaTwo :{
+    name:string,
+    age:number,
+    fightStyle:string
+} //these properties are strict cos you can't add extra properties
+ninjaTwo={name:`mike`,age:30,fightStyle:`kungfu`}
+
+// DYNAMIC[ANY] TYPES
+let listnumber:any; // then you can assign it to any data types
+let mixedArr:any[]=[];//making mixedArr array accept values of any datatypes
+let mixedObj:{name:any,age:any}

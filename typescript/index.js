@@ -45,9 +45,29 @@ price = 4000;
 isLoggedIn: false;
 // ARRAY
 var nun;
-nun = ["patricia", "gloria"];
-nun.push("treasure"); // but push method doesn't unless you assigned it to an array
+// nun.push(`treasure`) // but push method doesn't unless you assigned it to an array// error:Variable 'nun' is used before being assigned.
+nun = ["patricia", "gloria"]; //either this
 console.log(nun);
-var numb = [];
+var numb = []; // or this
 numb.push("eva"); //this works
 console.log(numb);
+// MIXED ARRAY(union type array variable)
+var mixed = []; //string or numbers are allowed to be pushed to this array
+mixed.push(19);
+mixed.push("numbers");
+mixed.push(false); //TSerror: Argument of type 'boolean' is not assignable to parameter of type 'string | number'
+console.log(mixed);
+// union type single variable
+var uid;
+uid = "abc";
+uid = 123; //no TSerrors
+// OBJECT
+var ninjaOne; //ninjaOne becomes an object but since an array is a form of an object it is not static enough
+ninjaOne = { name: "smiles", age: "25" };
+// but for the sake of specificity
+var ninjaTwo; //these properties are strict cos you can't add extra properties
+ninjaTwo = { name: "mike", age: 30, fightStyle: "kungfu" };
+// DYNAMIC[ANY] TYPES
+var listnumber; // then you can assign it to any data types
+var mixedArr = []; //making mixedArr array accept values of any datatypes
+var mixedObj;
