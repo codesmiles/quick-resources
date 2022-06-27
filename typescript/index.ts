@@ -55,6 +55,13 @@ price = 4000;
 isLoggedIn:false;
 
 // ARRAY
+let nun:string[];
+nun = [`patricia`,`gloria`]
+nun.push(`treasure`) // but push method doesn't unless you assigned it to an array
+console.log(nun)
 
+let numb:string[]=[];
+numb.push(`eva`); //this works
+console.log(numb);
 
 

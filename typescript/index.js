@@ -44,3 +44,10 @@ char = "problem";
 price = 4000;
 isLoggedIn: false;
 // ARRAY
+var nun;
+nun = ["patricia", "gloria"];
+nun.push("treasure"); // but push method doesn't unless you assigned it to an array
+console.log(nun);
+var numb = [];
+numb.push("eva"); //this works
+console.log(numb);
