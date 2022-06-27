@@ -92,3 +92,7 @@ ninjaTwo={name:`mike`,age:30,fightStyle:`kungfu`}
 let listnumber:any; // then you can assign it to any data types
 let mixedArr:any[]=[];//making mixedArr array accept values of any datatypes
 let mixedObj:{name:any,age:any}
+
+// command line code to initialize tsconfig file `tsc -- init`
+const hopeItWorks:boolean = true;
+// hopeItWorks = true;
