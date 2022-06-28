@@ -74,4 +74,13 @@ let mixedArr = []; //making mixedArr array accept values of any datatypes
 let mixedObj;
 // command line code to initialize tsconfig file `tsc -- init`
 const hopeItWorks = true;
-// hopeItWorks = true;
+const logdetail = (user) => {
+    console.log(`${user.name} that has ${user.uid} says hello`);
+};
+const logDataDetails = (user) => {
+    console.log(`${user.name} that has ${user.uid} says hello`);
+};
+logDataDetails({ name: `michael`, uid: 234 });
+// FUNCTION SIGNATURE
+let sayHello; //the f must be capitalized
+let sayhi = (a, b) => void ; //the whole project should retun void

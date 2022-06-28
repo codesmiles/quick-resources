@@ -94,5 +94,24 @@ let mixedArr:any[]=[];//making mixedArr array accept values of any datatypes
 let mixedObj:{name:any,age:any}
 
 // command line code to initialize tsconfig file `tsc -- init`
-const hopeItWorks:boolean = true;
+ const hopeItWorks:boolean = true;
 // hopeItWorks = true;
+
+
+
+// TYPE ALIASES:ways to avoid type specifications
+type mikeId = string|number;
+type userData = {name:string,uid:number};
+
+const logdetail = (user:{name:string,uid:mikeId})=>{
+    console.log(`${user.name} that has ${user.uid} says hello`)
+}
+
+const logDataDetails = (user:userData)=>{
+    console.log(`${user.name} that has ${user.uid} says hello`)
+}
+logDataDetails({name:`michael`,uid:234})
+
+// FUNCTION SIGNATURE
+let sayHello:Function; //the f must be capitalized
+let sayhi =(a:string,b:string)=>void //the whole project should retun void
