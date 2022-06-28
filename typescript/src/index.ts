@@ -52,66 +52,70 @@ let isLoggedIn: boolean;// boolean
 
 char = `problem`;
 price = 4000;
-isLoggedIn:false;
+isLoggedIn: false;
 
 // ARRAY
-let nun:string[];
+let nun: string[];
 // nun.push(`treasure`) // but push method doesn't unless you assigned it to an array// error:Variable 'nun' is used before being assigned.
-nun = [`patricia`,`gloria`] //either this
+nun = [`patricia`, `gloria`] //either this
 console.log(nun)
 
-let numb:string[]=[];// or this
+let numb: string[] = [];// or this
 numb.push(`eva`); //this works
 console.log(numb);
 
 // MIXED ARRAY(union type array variable)
-let mixed:(string|number)[] =[]; //string or numbers are allowed to be pushed to this array
+let mixed: (string | number)[] = []; //string or numbers are allowed to be pushed to this array
 mixed.push(19);
 mixed.push(`numbers`);
 mixed.push(false)//TSerror: Argument of type 'boolean' is not assignable to parameter of type 'string | number'
 console.log(mixed)
 
 // union type single variable
-let uid:string|number
+let uid: string | number
 
 uid = `abc`;
 uid = 123; //no TSerrors
 
 // OBJECT
 let ninjaOne: object;//ninjaOne becomes an object but since an array is a form of an object it is not static enough
-ninjaOne ={name :`smiles`,age:`25`};
+ninjaOne = { name: `smiles`, age: `25` };
 // but for the sake of specificity
-let ninjaTwo :{
-    name:string,
-    age:number,
-    fightStyle:string
+let ninjaTwo: {
+    name: string,
+    age: number,
+    fightStyle: string
 } //these properties are strict cos you can't add extra properties
-ninjaTwo={name:`mike`,age:30,fightStyle:`kungfu`}
+ninjaTwo = { name: `mike`, age: 30, fightStyle: `kungfu` }
 
 // DYNAMIC[ANY] TYPES
-let listnumber:any; // then you can assign it to any data types
-let mixedArr:any[]=[];//making mixedArr array accept values of any datatypes
-let mixedObj:{name:any,age:any}
+let listnumber: any; // then you can assign it to any data types
+let mixedArr: any[] = [];//making mixedArr array accept values of any datatypes
+let mixedObj: { name: any, age: any }
 
 // command line code to initialize tsconfig file `tsc -- init`
- const hopeItWorks:boolean = true;
+const hopeItWorks: boolean = true;
 // hopeItWorks = true;
 
 
 
 // TYPE ALIASES:ways to avoid type specifications
-type mikeId = string|number;
-type userData = {name:string,uid:number};
+type mikeId = string | number;
+type userData = { name: string, uid: number };
 
-const logdetail = (user:{name:string,uid:mikeId})=>{
+const logdetail = (user: { name: string, uid: mikeId }) => {
     console.log(`${user.name} that has ${user.uid} says hello`)
 }
 
-const logDataDetails = (user:userData)=>{
+const logDataDetails = (user: userData) => {
     console.log(`${user.name} that has ${user.uid} says hello`)
 }
-logDataDetails({name:`michael`,uid:234})
+logDataDetails({ name: `michael`, uid: 234 })
 
 // FUNCTION SIGNATURE
-let sayHello:Function; //the f must be capitalized
-let sayhi =(a:string,b:string)=>void //the whole project should retun void
+let sayHello: Function; //the f must be capitalized
+sayHello = () => {
+    console.log(`hello`)
+}
+
+ //the whole project should retun void

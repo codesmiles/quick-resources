@@ -83,4 +83,7 @@ const logDataDetails = (user) => {
 logDataDetails({ name: `michael`, uid: 234 });
 // FUNCTION SIGNATURE
 let sayHello; //the f must be capitalized
-let sayhi = (a, b) => void ; //the whole project should retun void
+sayHello = () => {
+    console.log(`hello`);
+};
+//the whole project should retun void
