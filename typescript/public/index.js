@@ -4,8 +4,8 @@ console.log(`shit happens`);
 //typescript infers the type of a variable based on the initial value you assign to it
 let age = 30; // ignore this errors
 let isLearning = true;
-age = "michael"; //brings an error:Type 'string' is not assignable to type 'number'
-isLearning = "yes"; // gives error:Type 'string' is not assignable to type 'boolean'.
+// age = "michael";//brings an error:Type 'string' is not assignable to type 'number'
+// isLearning = "yes"; // gives error:Type 'string' is not assignable to type 'boolean'.
 isLearning = false; //gives no error
 age = 20; //gives no errors
 // you can also initially declare what type of value you want to assign to the variable
@@ -18,11 +18,11 @@ console.log(circ(8.4));
 // ARRAYS
 let names = ["wahala", "local", "stuff"]; //type of the value and vatriable is automatically fixed
 names.push(`michael`); //no errors
-names.push(23); //give error:Argument of type 'number' is not assignable to parameter of type 'string'. based on the type inference
+// names.push(23)//give error:Argument of type 'number' is not assignable to parameter of type 'string'. based on the type inference
 console.log(names);
 let num = [1, 3, 4, 6];
 num.push(21); //no err
-num.push(`wahala`); //gives error :Argument of type 'string' is not assignable to parameter of type 'number'.
+// num.push(`wahala`)//gives error :Argument of type 'string' is not assignable to parameter of type 'number'.
 console.log(num);
 //Declaring mixed array
 let numMixedStr = [12, `mike`, 3, 5];
@@ -56,7 +56,7 @@ console.log(numb);
 let mixed = []; //string or numbers are allowed to be pushed to this array
 mixed.push(19);
 mixed.push(`numbers`);
-mixed.push(false); //TSerror: Argument of type 'boolean' is not assignable to parameter of type 'string | number'
+// mixed.push(false)//TSerror: Argument of type 'boolean' is not assignable to parameter of type 'string | number'
 console.log(mixed);
 // union type single variable
 let uid;
@@ -86,4 +86,22 @@ let sayHello; //the f must be capitalized
 sayHello = () => {
     console.log(`hello`);
 };
+let sayhi;
+sayhi = (name, sur) => {
+    console.log(`hello ${name}${sur}`);
+};
+sayhi(`code`, `smiles`);
 //the whole project should retun void
+let calculator;
+calculator = (x, y, multiple) => {
+    if (multiple === `add`) {
+        return x + y;
+    }
+    else if (multiple === `sub`) {
+        return x - y;
+    }
+    else {
+        return `unable to calculate`;
+    }
+};
+console.log(calculator(2, 4, `add`));
