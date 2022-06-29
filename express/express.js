@@ -10,6 +10,8 @@ const bcrypt = require("bcrypt");
 const ejs = require("ejs");
 const app = express();
 
+// require('crypto').randomBytes(64).toString("hex") //to generate random cryptic words
+
 // // Set up view engine middleware for ejs
 app.set("view engine", "ejs");
 
