@@ -43,7 +43,9 @@ mongoose.connect(url, function (err) {
 //------------------TESTING VALIDATOR-------------------
 console.log(validator.isEmail(`mikedbci@fmail.com`));
 console.log(validator.isStrongPassword(`mikeAdbch@1`));
+
 //------------------------------------------------------
+
 
       //------------------USING BCRYPT version 1----------------------
       // generate salt to hashpassword
@@ -51,6 +53,9 @@ console.log(validator.isStrongPassword(`mikeAdbch@1`));
       // set password to a hashed password
       password = await bcrypt.hash(password, salt);
 
+      // bcrypt.compareSync(password, account.passwordHash)
+      // validate bcrypt
+      // bcrypt.compare(password, hash)
       //----------------------------------------------------
 
       /////////////////bcrypt version 2//////////////////
