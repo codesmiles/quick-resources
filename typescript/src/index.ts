@@ -136,3 +136,47 @@ calculator = (x: number, y: number, multiple: string) => {
 }
 
 console.log(calculator(2, 4, `add`))
+
+
+
+
+// classes
+import {Invoice} from "./classes/invoice"; // module exporting
+
+// instanciate a class
+const instOne = new Invoice("michael", "work on dpetworld website", 25000);
+const instTwo = new Invoice("Simi", "work on shoptacle website", 50000);
+console.log(instOne, instTwo);
+// ina situation where you want a particular array to accept only data that has been created with the invoice class instead of this let invouces:string[] =[];
+// you can allow
+let invoices: Invoice[] = [];
+invoices.push(instOne);//this is only allowed because the invoice class is a type of array
+
+// Interface
+// interface is used to enforce a certain type of structure within classes or objects
+import {IsPerson} from "./interfaces/isperson";
+// with objects
+const me:IsPerson ={
+    name:"mike",
+    age:24,
+    speak(word:string):void{
+        console.log(word);
+    },
+    spend(cash:number):number{
+        return cash;
+    }
+}
+console.log(me.age);
+
+import {Payment} from "./classes/payment";
+import {HasFormatter} from "./interfaces/hasFormatter";
+let docOne:HasFormatter;
+let docTwo:HasFormatter;
+
+docOne = new Invoice("michael","dog food",850);
+docTwo = new Payment("customer","dogfood",1000);
+
+console.log(docOne,docTwo);
+
+// generics
+

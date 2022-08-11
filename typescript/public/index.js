@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 console.log(`shit happens`);
 // lesson no 1 the values can be changed but not the types 
 //typescript infers the type of a variable based on the initial value you assign to it
@@ -105,3 +106,32 @@ calculator = (x, y, multiple) => {
     }
 };
 console.log(calculator(2, 4, `add`));
+// classes
+const invoice_1 = require("./classes/invoice"); // module exporting
+// instanciate a class
+const instOne = new invoice_1.Invoice("michael", "work on dpetworld website", 25000);
+const instTwo = new invoice_1.Invoice("Simi", "work on shoptacle website", 50000);
+console.log(instOne, instTwo);
+// ina situation where you want a particular array to accept only data that has been created with the invoice class instead of this let invouces:string[] =[];
+// you can allow
+let invoices = [];
+invoices.push(instOne); //this is only allowed because the invoice class is a type of array
+// with objects
+const me = {
+    name: "mike",
+    age: 24,
+    speak(word) {
+        console.log(word);
+    },
+    spend(cash) {
+        return cash;
+    }
+};
+console.log(me.age);
+const payment_1 = require("./classes/payment");
+let docOne;
+let docTwo;
+docOne = new invoice_1.Invoice("michael", "dog food", 850);
+docTwo = new payment_1.Payment("customer", "dogfood", 1000);
+console.log(docOne, docTwo);
+// generics

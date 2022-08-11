@@ -93,8 +93,7 @@ Route::get("/posts", function () {
  * php artisan make:migration "your table name"
  * after that 
  * run php artisan migrate
- * also dont forget that you should fill the database info into the .env file so that laravel will be able to recognize your local database
- */
+ * also dont forget that you should fill the database info into the .env file so that laravel will be able to recognize your local databaseok */
 Schema::create('lists', function (Blueprint $table) {
     $table->id();
     $table->string('title');

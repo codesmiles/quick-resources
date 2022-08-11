@@ -10,7 +10,10 @@ const mongooseSchema = new Schema({
     type: String,
     required: true,
   },
+  
 });
+
+
 
 const mongooseModel = mongoose.model("user", mongooseSchema);
 module.exports = mongooseModel;
