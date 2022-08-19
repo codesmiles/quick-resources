@@ -1,0 +1,12 @@
+[
+    {
+        "name": "Michael",
+        "age": "60",
+        "stack": "html,css,js,jquery,sass,php,laravel,node,express,mysql,mongoDB"
+    },
+    {
+        "name": "codesmiles",
+        "age": "24",
+        "stack": "php,laravel,node,express,mysql,mongoDB,c#"
+    }
+]
