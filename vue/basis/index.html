@@ -1,0 +1,114 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>learning vue</title>
+    <script src="https://unpkg.com/vue@3.0.2"></script>
+    <style>
+        body {
+            background: #eee;
+            max-width: 960px;
+            margin: 20px auto;
+        }
+
+        p,
+        h3,
+        ul {
+            margin: 0;
+            padding: 0;
+        }
+
+        li {
+            list-style-type: none;
+            background: #fff;
+            margin: 2px auto;
+            padding: 10px 20x;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        li.fav {
+            background: #ff9ed2;
+            color: white;
+        }
+
+        .box {
+            padding: 100px 0;
+            width: 400px;
+            text-align: center;
+            background: #ddd;
+            margin: 20px;
+            display: inline-block;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <div v-if="showActMovie">
+            <!-- conditional rendering -->
+            <p>{{title}}</p><!-- data templates -->
+            <p>{{actor}}</p>
+            <h1>{{thoseThatDied}}</h1>
+        </div>
+        <button @click="toggleShowMovie">
+            <!-- <span v-if="!showActMovie">show movie</span>
+            <span v-else>Hide movie</span> it basically works on the existing variable not the one changes in the future -->
+            <span v-show="showActMovie">show movie</span>
+            <!--different from v-if cos it just change the tag style to display none instead of removing it from the dom totally  -->
+            <span v-show="!showActMovie">Hide movie</span>
+        </button>
+        <br>
+        <br>
+
+        <button v-on:click="thoseThatDied++">Increase Victim</button><!-- click events or any other events -->
+        <button v-on:click="thoseThatDied--">decrease Victim</button>
+        <div @click="title = 'Black panther'">
+            <h2>click to Change title</h2>
+        </div>
+        <!--click events shortcut  -->
+        <div @click="changeActor('dead civilians')">
+            <h2>click to Change actor</h2>
+        </div>
+        <br><br>
+        <!-- MOUSE EVENTS -->
+        <div class="box" @mouseOver="handleEvent">Mouse over the block</div>
+        <div class="box" @mouseLeave="handleEvent">Mouse leave</div>
+        <div class="box" @dblclick="handleEvent($event,4)">double click</div>
+        <!-- telling vue that we want to pass in that event params and also the number -->
+        <div class="box" @mouseMove="handleMouseMove">position - {{x}} {{y}}</div>
+        <br>
+
+        <div v-if="showBooks">
+            <ul>
+                <!--using vue for loop  -->
+                <li v-for="item in books" :class="{fav:item.isFav}" @click="toggleColor(item)">
+                    <h3>{{item.title}}</h3>
+                    <p>{{item.author}}</p>
+                </li>
+            </ul>
+        </div>
+        <button @click="toggleBooks">
+            <span v-show="toggleBooks">show books</span>
+            <span v-show="!toggleBooks">Hide books</span>
+        </button><br><br><br>
+
+
+        <!-- attribute binding with v-bind -->
+        <a v-bind:href="web_google">GOOGLE</a>
+        <a :href="facebook">FACEBOOK</a>
+        <!--alternative  -->
+
+        <!-- DYNAMIC CLASSES -->
+
+
+    </div>
+    <script src="vueScript.js"></script>
+
+</body>
+
+</html>

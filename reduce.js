@@ -25,5 +25,10 @@ function sumOfsquares(...arr) {
 // So no matter how many arguments are passed in, the reduce function will always evaluate it as an array and yeild the desired result
 console.log(sumOfsquares(2, 2, 3, 4, 5));
 
+// add 0's to generated rgb values
+const color = [];
+for (let i = 0; i < 3; i++)
+  color.push(("00" + ~~(Math.random() * 255)).slice(-3));
 
-
+const [r, g, b] = color;
+console.log(`rgb(${r}, ${g}, ${b})`);
