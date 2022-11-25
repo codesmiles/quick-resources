@@ -4,7 +4,18 @@ const jwt = require("jsonwebtoken");
 const app = express();
 const nodemailer = require("nodemailer");
 
+// MULTER
+const bodyParser = require("body-parser");
+const multer = require('multer');
+const upload = multer({dest: __dirname + '/uploads/images'});
+
+// MULTER
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.static('public'));
+
 app.use(express.json());
+
+
 
 // async function main() {
 //     // Generate test SMTP service account from ethereal.email
@@ -53,6 +64,16 @@ const post = [
 
 app.get("/posts", (req, res) => {});
 app.post("/login", (req, res) => {});
+
+// MULTER
+app.post('/upload', upload.single('photo'), (req, res) => {
+  if(req.file) {
+      res.json(req.file);
+  }
+  else throw 'error';
+});
+
+
 let port = 8080;
 app.listen(port, () => {
   console.log(`app is listening at port ${port}`);
